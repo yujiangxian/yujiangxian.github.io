@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<p style="margin-bottom: 2rem;">
+  <a href="{{ '/projects/' | relative_url }}" style="color: var(--text-muted); font-size: 0.9rem;">← 返回项目列表</a>
+</p>
+
+<h1>{{ page.title }}</h1>
+
+<div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;">
+  {% if page.status %}
+  <span class="status status-{{ page.status_class | default: 'concept' }}">{{ page.status }}</span>
+  {% endif %}
+  {% if page.github %}
+  <a href="{{ page.github }}" target="_blank" style="font-size: 0.85rem; color: var(--text-muted);">GitHub →</a>
+  {% endif %}
+</div>
+
+{% if page.description %}
+<p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">{{ page.description }}</p>
+{% endif %}
+
+{% if page.tech %}
+<div class="tech-tags" style="margin-bottom: 2rem;">
+  {% for t in page.tech %}
+  <span class="tech-tag">{{ t }}</span>
+  {% endfor %}
+</div>
+{% endif %}
+
+<hr>
+
+{{ content }}

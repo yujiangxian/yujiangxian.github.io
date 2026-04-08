@@ -1,0 +1,44 @@
+title: yujiangxian
+description: "AI · Security · Creative Tech"
+url: "https://yujiangxian.github.io"
+baseurl: ""
+
+# 主题
+remote_theme: pages-themes/midnight@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+# 作者信息
+author:
+  name: yujiangxian
+  github: yujiangxian
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# 编码
+encoding: utf-8
+
+# 排除文件
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+# 集合 - 项目页面
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

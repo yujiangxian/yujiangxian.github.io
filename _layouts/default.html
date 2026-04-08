@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <style>
+    /* ===== 黑金主题 ===== */
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #1a1a1a;
+      --bg-card-hover: #222222;
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --gold-dark: #a07c2a;
+      --text-primary: #e8e8e8;
+      --text-secondary: #999999;
+      --text-muted: #666666;
+      --border: #2a2a2a;
+      --border-gold: rgba(201, 168, 76, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* 顶部金线 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      z-index: 1000;
+    }
+
+    /* 导航 */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      z-index: 999;
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav .nav-links a:hover,
+    nav .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* 主内容 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* 标题 */
+    h1, h2, h3, h4 {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 .gold { color: var(--gold); }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 1.2em;
+      background: var(--gold);
+      margin-right: 0.8rem;
+      vertical-align: text-bottom;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.8rem;
+      color: var(--gold-light);
+    }
+
+    /* 段落 */
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    /* 链接 */
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover { color: var(--gold-light); }
+
+    /* 项目卡片 */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .project-card:hover::before { opacity: 1; }
+
+    .project-card .status {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .status-active {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .status-concept {
+      background: rgba(100, 100, 100, 0.15);
+      color: var(--text-muted);
+      border: 1px solid rgba(100, 100, 100, 0.3);
+    }
+
+    .status-planning {
+      background: rgba(76, 140, 201, 0.15);
+      color: #6aaddb;
+      border: 1px solid rgba(76, 140, 201, 0.3);
+    }
+
+    .project-card h3 {
+      margin: 0.5rem 0;
+      color: var(--text-primary);
+      font-size: 1.15rem;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text-muted);
+    }
+
+    /* 代码块 */
+    code {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      background: var(--bg-secondary);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.85em;
+      color: var(--gold-light);
+    }
+
+    pre {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    /* 列表 */
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    li { margin-bottom: 0.3rem; }
+
+    /* 引用 */
+    blockquote {
+      border-left: 3px solid var(--gold-dark);
+      padding: 0.8rem 1.2rem;
+      margin: 1rem 0;
+      background: rgba(201, 168, 76, 0.05);
+      color: var(--text-secondary);
+    }
+
+    /* 表格 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--bg-secondary);
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* 页脚 */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+
+    footer a { color: var(--gold-dark); }
+
+    /* 分隔线 */
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 2rem 0;
+    }
+
+    /* Hero 区域 */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .hero .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+    }
+
+    .hero .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.5rem auto;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .project-grid { grid-template-columns: 1fr; }
+      nav .nav-links { gap: 1rem; }
+      .container { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="{{ '/' | relative_url }}" class="logo">yujiangxian</a>
+      <ul class="nav-links">
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>首页</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>项目</a></li>
+        <li><a href="https://github.com/yujiangxian" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <footer>
+    <p>© {{ 'now' | date: "%Y" }} yujiangxian · Built with Jekyll & GitHub Pages</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/yujiangxian">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>

@@ -4,16 +4,21 @@ title: yujiangxian
 ---
 
 <div class="hero">
-  <h1><span class="gold">yu</span>jiangxian</h1>
+  <h1><span class="gold">Aura</span> Labs</h1>
   <div class="divider"></div>
-  <p class="subtitle">AI · Security · Creative Tech</p>
+  <p class="subtitle">边缘智能 · 安全技术 · 沉浸交互</p>
 </div>
 
-## 关于
+## 关于 Aura Labs
 
-独立开发者，专注于 AI 应用落地与安全技术研究。
+Aura Labs 是一家专注于边缘端 AI 落地的技术工作室。
 
-当前方向：将多模态大模型、语音克隆、AR 交互等前沿技术，从实验室带到边缘设备上真正跑起来。同时探索 Kiro IDE 生态扩展，让 AI Agent 接入更多实际场景。
+我们相信 AI 的未来不只在云端——它应该跑在你手边的设备上，保护你的隐私，响应你的情感，融入你的空间。
+
+我们正在做的事：
+- 把多模态大模型、声音克隆、语音识别部署到消费级硬件上，实现零数据外传的本地智能助手
+- 扩展 AI IDE 生态，让 Agent 能力通过 IM 平台触达每一个人
+- 探索 AR + AI 的沉浸式交互体验
 
 > 不做 demo，做能用的东西。
 

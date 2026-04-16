@@ -105,7 +105,7 @@ We work with cutting-edge technologies to deliver privacy-first AI solutions:
 
 <div class="contact-section">
 
-- **Email**: [hello@auralab.top](mailto:hello@auralab.top)
+- **Email**: [jiangxian@auralab.top](mailto:jiangxian@auralab.top)
 - **GitHub**: [github.com/yujiangxian](https://github.com/yujiangxian)
 - **Location**: China
 

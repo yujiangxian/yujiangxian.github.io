@@ -103,7 +103,7 @@ We work with cutting-edge technologies to deliver privacy-first AI solutions:
 
 ## Contact
 
-<div class="contact-section">
+<div class="contact-section" markdown="1">
 
 - **Email**: [jiangxian@auralab.top](mailto:jiangxian@auralab.top)
 - **GitHub**: [github.com/yujiangxian](https://github.com/yujiangxian)

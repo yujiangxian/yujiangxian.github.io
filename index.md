@@ -1,37 +1,32 @@
 ---
 layout: default
-title: yujiangxian
+title: Aura Labs
 ---
 
 <div class="hero">
   <h1><span class="gold">Aura</span> Labs</h1>
   <div class="divider"></div>
-  <p class="subtitle">边缘智能 · 安全技术 · 沉浸交互</p>
+  <p class="subtitle">Edge AI · Security · Immersive Interaction</p>
 </div>
 
-## 关于 Aura Labs
+## About Us
 
-Aura Labs 是一家专注于边缘端 AI 落地的技术工作室。
+Aura Labs is a technology studio focused on bringing AI to the edge. Founded in 2025, we build privacy-first intelligent systems that run on consumer-grade hardware — no cloud dependency, no data leakage.
 
-我们相信 AI 的未来不只在云端——它应该跑在你手边的设备上，保护你的隐私，响应你的情感，融入你的空间。
+We believe the future of AI isn't just in the cloud. It should run on the devices around you, protect your privacy, respond to your emotions, and blend into your space.
 
-我们正在做的事：
-- 把多模态大模型、声音克隆、语音识别部署到消费级硬件上，实现零数据外传的本地智能助手
-- 扩展 AI IDE 生态，让 Agent 能力通过 IM 平台触达每一个人
-- 探索 AR + AI 的沉浸式交互体验
-
-> 不做 demo，做能用的东西。
+**Our Mission:** Make edge AI accessible, private, and practical for everyone.
 
 ---
 
-## 项目
+## What We Do
 
 <div class="project-grid">
 
   <a href="{{ '/projects/edge-ai-assistant/' | relative_url }}" class="project-card" style="text-decoration: none;">
-    <span class="status status-active">进行中</span>
+    <span class="status status-active">In Progress</span>
     <h3>Edge AI Assistant</h3>
-    <p>基于多模态大模型的边缘端 AI 助手。Gemma 4 + 声音克隆 + Whisper，全部本地运行，零数据外传。</p>
+    <p>A multimodal AI assistant running entirely on local hardware. Gemma 4 + voice cloning + Whisper — zero data transmission.</p>
     <div class="tech-tags">
       <span class="tech-tag">Gemma 4</span>
       <span class="tech-tag">GPT-SoVITS</span>
@@ -42,9 +37,9 @@ Aura Labs 是一家专注于边缘端 AI 落地的技术工作室。
   </a>
 
   <a href="{{ '/projects/kiro-im-bridge/' | relative_url }}" class="project-card" style="text-decoration: none;">
-    <span class="status status-planning">规划中</span>
+    <span class="status status-planning">Planning</span>
     <h3>Kiro IM Bridge</h3>
-    <p>将 Kiro IDE / Kiro CLI 扩展为 IM 通讯接入网关，通过 ACP 协议连接 Slack、Discord、Telegram 等平台。</p>
+    <p>Extending Kiro IDE / CLI as an IM gateway, connecting Slack, Discord, and Telegram via ACP protocol.</p>
     <div class="tech-tags">
       <span class="tech-tag">Kiro</span>
       <span class="tech-tag">ACP</span>
@@ -55,23 +50,23 @@ Aura Labs 是一家专注于边缘端 AI 落地的技术工作室。
   </a>
 
   <a href="{{ '/projects/aura/' | relative_url }}" class="project-card" style="text-decoration: none;">
-    <span class="status status-concept">概念</span>
-    <h3>Aura</h3>
-    <p>基于 AR 技术的 3D 虚拟助手，支持语音交互和空间定位，游戏级角色渲染。</p>
+    <span class="status status-concept">Concept</span>
+    <h3>Aura AR</h3>
+    <p>A 3D virtual assistant powered by AR, with voice interaction, spatial awareness, and game-quality rendering.</p>
     <div class="tech-tags">
       <span class="tech-tag">AR</span>
       <span class="tech-tag">Unity</span>
-      <span class="tech-tag">语音交互</span>
+      <span class="tech-tag">Voice</span>
       <span class="tech-tag">3D</span>
     </div>
   </a>
 
   <a href="{{ '/projects/ptes/' | relative_url }}" class="project-card" style="text-decoration: none;">
-    <span class="status status-concept">概念</span>
+    <span class="status status-concept">Concept</span>
     <h3>PTES Platform</h3>
-    <p>基于 PTES 标准的渗透测试全流程管理平台，集成工具库、项目管理和知识中心。</p>
+    <p>A penetration testing management platform based on PTES standards, integrating toolkits, project management, and knowledge base.</p>
     <div class="tech-tags">
-      <span class="tech-tag">安全</span>
+      <span class="tech-tag">Security</span>
       <span class="tech-tag">PTES</span>
       <span class="tech-tag">FastAPI</span>
       <span class="tech-tag">Vue 3</span>
@@ -82,6 +77,37 @@ Aura Labs 是一家专注于边缘端 AI 落地的技术工作室。
 
 ---
 
-## 联系
+## Our Team
 
-- GitHub: [yujiangxian](https://github.com/yujiangxian)
+<div class="team-section">
+  <div class="team-member">
+    <h3>Jiangxian Yu</h3>
+    <p class="team-role">Founder & Lead Engineer</p>
+    <p>Full-stack developer with expertise in edge AI deployment, security engineering, and immersive interaction systems. Passionate about making AI run locally on consumer hardware.</p>
+  </div>
+</div>
+
+---
+
+## Technology Stack
+
+We work with cutting-edge technologies to deliver privacy-first AI solutions:
+
+- **Edge AI**: Gemma 4, Whisper, GPT-SoVITS, Ollama, ROCm
+- **Protocols**: MCP (Model Context Protocol), ACP (Agent Communication Protocol), A2A
+- **Security**: PTES methodology, penetration testing, secure architecture
+- **Platforms**: Linux, AMD ROCm, NVIDIA CUDA, Docker
+- **Development**: Python, FastAPI, Vue 3, TypeScript
+
+---
+
+## Contact
+
+<div class="contact-section">
+
+- **Email**: [hello@auralab.top](mailto:hello@auralab.top)
+- **GitHub**: [github.com/yujiangxian](https://github.com/yujiangxian)
+- **Location**: China
+
+</div>
+

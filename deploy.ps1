@@ -33,4 +33,4 @@ echo 'Sync complete'
 
 Write-Host "`n=== 部署完成 ===" -ForegroundColor Green
 Write-Host "GitHub Pages: https://yujiangxian.github.io"
-Write-Host "Server:       http://yujiangxian.net"
+Write-Host "Server:       https://auralab.top"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -356,6 +356,51 @@
       nav .nav-links { gap: 1rem; }
       .container { padding: 2rem 1rem; }
     }
+
+    /* 团队 */
+    .team-section {
+      margin: 2rem 0;
+    }
+
+    .team-member {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem;
+      max-width: 500px;
+    }
+
+    .team-member h3 {
+      color: var(--text-primary);
+      margin: 0 0 0.3rem;
+    }
+
+    .team-role {
+      color: var(--gold) !important;
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem !important;
+    }
+
+    .team-member p:last-child {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* 联系方式 */
+    .contact-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-section li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-section li:last-child {
+      border-bottom: none;
+    }
   </style>
 </head>
 <body>
@@ -363,9 +408,10 @@
     <div class="nav-inner">
       <a href="{{ '/' | relative_url }}" class="logo">Aura Labs</a>
       <ul class="nav-links">
-        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>首页</a></li>
-        <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>项目</a></li>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Projects</a></li>
         <li><a href="https://github.com/yujiangxian" target="_blank">GitHub</a></li>
+        <li><a href="mailto:hello@auralab.top">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -375,8 +421,9 @@
   </div>
 
   <footer>
-    <p>© {{ 'now' | date: "%Y" }} Aura Labs · Built with Jekyll & GitHub Pages</p>
+    <p>© {{ 'now' | date: "%Y" }} Aura Labs. All rights reserved.</p>
     <p style="margin-top: 0.5rem;">
+      <a href="mailto:hello@auralab.top">hello@auralab.top</a> · 
       <a href="https://github.com/yujiangxian">GitHub</a>
     </p>
   </footer>

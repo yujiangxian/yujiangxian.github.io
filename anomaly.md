@@ -44,7 +44,8 @@ body_class: anomaly-page
   .entry p { color: #8a9a90; font-size: 0.92rem; margin-bottom: 0.5rem; }
   .entry p:last-child { margin-bottom: 0; }
   .redacted {
-    background: #0a0a0a; color: #0a0a0a; border-radius: 2px;
+    background: #1c2420; color: #1c2420; border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(143, 174, 155, 0.12);
     user-select: none; padding: 0 0.2em;
   }
 

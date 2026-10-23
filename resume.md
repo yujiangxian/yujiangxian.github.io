@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 实验体 #0001 · 自我报告
+title: "实验体 #0001 · 自我报告"
 permalink: /resume/
 ---
 
